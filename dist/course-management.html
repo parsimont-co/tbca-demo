@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Management | The Beverage Clique Academy</title>
+    <meta name="description" content="Frontend course content management dashboard for The Beverage Clique Academy." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="management-page">
+    <div class="management-shell">
+      <aside class="management-sidebar">
+        <a class="management-brand" href="index.html" aria-label="The Beverage Clique Academy home">
+          <span class="brand-mark"><span class="brand-ring"></span><span class="brand-inner">C</span></span>
+          <span><strong>BEVERAGE</strong><small>CLIQUE ACADEMY</small></span>
+        </a>
+        <p class="sidebar-label">Workspace</p>
+        <nav class="management-nav" aria-label="Management navigation">
+          <a href="course-management.html" class="active"><span>Courses</span><small>08 records</small></a>
+          <a href="#"><span>Categories</span><small>07 records</small></a>
+          <a href="#"><span>Trainers</span><small>06 records</small></a>
+          <a href="#"><span>Events</span><small>12 records</small></a>
+        </nav>
+        <div class="sidebar-footer">
+          <p>Content workspace</p>
+          <a href="courses.html">View public catalogue</a>
+        </div>
+      </aside>
+
+      <main class="management-main">
+        <header class="management-header">
+          <div>
+            <p class="eyebrow">Content management / Courses</p>
+            <h1>Course library</h1>
+            <p class="header-copy">Shape what learners discover first. Keep every programme, pathway, and detail in one place.</p>
+          </div>
+          <div class="header-actions">
+            <span class="sync-status"><i></i>All changes saved</span>
+            <button class="primary-btn management-add" type="button" data-action="new">Add course <span>+</span></button>
+          </div>
+        </header>
+
+        <section class="management-stats" aria-label="Course library summary">
+          <article><span class="stat-label">Total courses</span><strong id="total-count">08</strong><small>Across all categories</small></article>
+          <article><span class="stat-label">Published</span><strong id="published-count">05</strong><small>Visible in catalogue</small></article>
+          <article><span class="stat-label">Drafts</span><strong id="draft-count">03</strong><small>Still in progress</small></article>
+          <article class="accent-stat"><span class="stat-label">Last updated</span><strong>Today</strong><small>30 Aug 2026, 09:42</small></article>
+        </section>
+
+        <section class="management-panel">
+          <div class="panel-heading">
+            <div><h2>All courses</h2><p>Manage catalogue visibility and course details.</p></div>
+            <div class="export-controls">
+              <label for="export-format">Format</label>
+              <select id="export-format" aria-label="Export format">
+                <option value="json">JSON</option>
+                <option value="csv">CSV</option>
+              </select>
+              <button class="text-button" type="button" data-action="export">Export list</button>
+            </div>
+          </div>
+          <div class="course-toolbar">
+            <label class="search-field"><span>Search</span><input id="course-search" type="search" placeholder="Search by course name or code" /></label>
+            <label><span>Category</span><select id="category-filter"><option value="all">All categories</option><option value="Wine">Wine</option><option value="Sake">Sake</option><option value="Spirits">Spirits</option><option value="Beer">Beer</option><option value="Tea">Tea</option></select></label>
+            <label><span>Status</span><select id="status-filter"><option value="all">All statuses</option><option value="published">Published</option><option value="draft">Draft</option></select></label>
+          </div>
+          <div class="table-wrap">
+            <table class="course-table" aria-label="Course library">
+              <thead><tr><th>Course</th><th>Category</th><th>Level</th><th>Duration</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+              <tbody id="course-list"></tbody>
+            </table>
+            <div class="empty-state" id="empty-state" hidden>No courses match those filters.</div>
+          </div>
+          <div class="table-footer"><span id="result-count">Showing 8 courses</span><span>Local preview data <b>API ready</b></span></div>
+        </section>
+      </main>
+
+      <aside class="course-drawer" id="course-drawer" aria-hidden="true">
+        <div class="drawer-header"><div><p class="eyebrow">Course record</p><h2 id="drawer-title">Add a course</h2></div><button class="close-button" type="button" data-action="close" aria-label="Close course form">X</button></div>
+        <form id="course-form">
+          <input id="course-id" type="hidden" />
+          <label>Course name<input id="course-name" name="name" required /></label>
+          <label>Course code<input id="course-code" name="code" required placeholder="e.g. WSET-L1-WINE" /></label>
+          <div class="form-row"><label>Category<select id="course-category" name="category"><option>Wine</option><option>Sake</option><option>Spirits</option><option>Beer</option><option>Tea</option></select></label><label>Level<select id="course-level" name="level"><option>Foundation</option><option>Intermediate</option><option>Advanced</option><option>Expert</option></select></label></div>
+          <div class="form-row"><label>Duration<input id="course-duration" name="duration" placeholder="1 day" required /></label><label>Price<input id="course-price" name="price" placeholder="$480" required /></label></div>
+          <label>Short description<textarea id="course-description" name="description" rows="4" required></textarea></label>
+          <label>Image URL<input id="course-image" name="image" type="url" placeholder="https://images.unsplash.com/..." /></label>
+          <label class="toggle-field"><span><strong>Published</strong><small>Make this course visible on the public catalogue.</small></span><input id="course-published" name="published" type="checkbox" /><i></i></label>
+          <div class="drawer-actions"><button class="secondary-btn" type="button" data-action="close">Cancel</button><button class="primary-btn" type="submit">Save course</button></div>
+        </form>
+      </aside>
+      <div class="drawer-overlay" data-action="close"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
