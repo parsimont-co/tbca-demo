@@ -52,17 +52,17 @@ img {
   border: 2px solid rgba(17, 42, 72, 0.7);
   border-left: 0;
   border-top: 0;
-  padding: 34px 26px 32px 40px;
+  padding: 72px 48px 40px 48px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 288px;
 }
 
 .story-card h1 {
   margin: 0 0 14px;
   color: var(--navy-deep);
-  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  font-size: clamp(1.2rem, 1.5vw, 1.6rem);
   line-height: 1.12;
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
@@ -71,7 +71,7 @@ img {
 .story-card p {
   margin: 0;
   color: var(--navy-soft);
-  font-size: 1.08rem;
+  font-size: 0.68rem;
   line-height: 1.7;
   max-width: 660px;
 }
@@ -93,26 +93,28 @@ img {
 .mission-band {
   background: #0d2c5f;
   color: #f3f6ff;
-  padding: 28px 32px 28px;
-  text-align: center;
+  padding: 48px 64px;
+  text-align: left;
   border-top: 3px solid rgba(17, 42, 72, 0.8);
   border-bottom: 3px solid rgba(17, 42, 72, 0.8);
 }
 
 .mission-band h2 {
   margin: 0;
+  max-width: 780px;
   font-family: "Libre Baskerville", serif;
-  font-size: clamp(1.8rem, 2.3vw, 2.6rem);
+  font-size: clamp(1.3rem, 1.7vw, 1.9rem);
   line-height: 1.25;
-  font-weight: 700;
+  font-weight: 400;
   color: #f5f6f9;
 }
 
 .mission-band p {
-  margin: 16px 0 0;
-  font-size: 1.2rem;
+  margin: 24px 0 0;
+  font-family: "Libre Baskerville", serif;
+  font-size: 0.65rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
-  font-weight: 500;
 }
 
 .certification-wrap {
@@ -275,6 +277,19 @@ img {
   color: var(--navy-deep);
 }
 
+.beyond-brand-logo {
+  display: inline-block;
+  width: 158px;
+  height: 45px;
+  background-color: var(--navy-deep);
+  -webkit-mask-image: url("res/criadera-concepts-logo.svg");
+  mask-image: url("res/criadera-concepts-logo.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
 .brand-mark.small {
   width: 40px;
   height: 40px;
@@ -353,8 +368,8 @@ textarea {
   justify-content: space-between;
   background: var(--navy);
   color: var(--white);
-  padding: 24px 30px 22px;
-  min-height: 90px;
+  padding: 18px 30px 16px;
+  min-height: 72px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -363,6 +378,12 @@ textarea {
   align-items: center;
   gap: 12px;
   min-width: 220px;
+}
+
+.brand-logo {
+  height: 48px;
+  width: auto;
+  display: block;
 }
 
 .brand-mark {
@@ -412,11 +433,10 @@ textarea {
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 0;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 8px;
   flex: 1;
-  max-width: 50%;
   margin-left: auto;
 }
 
