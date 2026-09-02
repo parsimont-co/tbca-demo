@@ -1,0 +1,68 @@
+.home-page { padding: 0; }
+.banner-intro { background: #f1f0ee; min-height: 200px; display: grid; place-items: center; text-align: center; padding: 36px 40px; }
+.heading-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.heading-wrap h1 { margin: 0; font-size: clamp(2rem, 3vw, 3rem); font-family: "Libre Baskerville", serif; font-weight: 700; color: var(--navy-deep); letter-spacing: 0.02em; }
+.heading-wrap p { margin: 0; font-size: 1.05rem; color: var(--navy-soft); font-style: italic; }
+.divider { border-top: 3px dashed rgba(13, 31, 63, 0.8); width: 100%; margin: 0; }
+.intro-copy { background: #f1f0ee; border-bottom: 3px solid rgba(17, 42, 72, 0.8); padding: 22px 40px 26px; text-align: center; }
+.intro-copy p { margin: 0; font-size: clamp(1.5rem, 2vw, 2.05rem); font-family: "Libre Baskerville", serif; color: var(--navy-deep); line-height: 1.45; font-weight: 700; }
+.course-picker { background: linear-gradient(180deg, #0b2d5c 0%, #0a2d62 100%); border-top: 3px solid rgba(21, 46, 86, 0.9); border-bottom: 3px solid rgba(21, 46, 86, 0.9); padding: 38px 30px 48px; position: relative; }
+.picker-header { text-align: center; color: #edf4ff; margin-bottom: 30px; position: relative; }
+.helper-pill { position: absolute; left: 28px; top: 0; font-size: 0.62rem; line-height: 1.2; color: rgba(255, 255, 255, 0.75); opacity: 0.7; text-align: left; }
+.picker-header h2 { margin: 0; font-size: clamp(2.4rem, 3vw, 4rem); font-weight: 700; line-height: 1.15; font-family: "Libre Baskerville", serif; }
+.picker-header p { margin: 10px 0 0; font-size: 1rem; color: rgba(240, 246, 255, 0.9); font-style: italic; }
+.picker-header p span { color: #f8d7a7; }
+.course-tiles { display: grid; grid-template-columns: repeat(7, minmax(110px, 1fr)); gap: 24px; align-items: end; justify-items: center; margin: 38px auto 22px; max-width: 1200px; }
+.course-tile { width: 118px; appearance: none; background: transparent; border: none; color: white; text-align: center; cursor: pointer; padding: 0; position: relative; transition: transform 0.2s ease; }
+.course-tile:hover, .course-tile:focus-visible { transform: translateY(-3px); }
+.course-tile img { width: 112px; height: 112px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(255, 255, 255, 0.45); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18); margin: 0 auto 12px; transition: filter 0.2s ease; }
+.course-tile span { position: absolute; inset: 0 0 12px; display: grid; place-items: center; font-size: 1.05rem; color: #ffffff; font-weight: 600; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+.course-tile:hover img, .course-tile:focus-visible img { filter: brightness(0.52); }
+.course-tile:hover span, .course-tile:focus-visible span { opacity: 1; }
+.featured-courses { background: #f1f0ee; padding: 50px 36px 16px; }
+.section-header { text-align: center; margin-bottom: 30px; }
+.section-header h2 { margin: 0; font-size: clamp(2.4rem, 3vw, 3.3rem); line-height: 1.2; font-family: "Libre Baskerville", serif; color: var(--navy-deep); }
+.section-header p { margin: 10px 0 0; font-size: 1.05rem; font-style: italic; color: var(--navy-soft); }
+.course-card { background: transparent; border: 0; padding: 0; display: flex; flex-direction: column; align-items: stretch; }
+.course-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 18px 18px 0 0; background: rgba(16, 42, 83, 0.08); }
+.course-card h3 { margin: 18px 0 12px; font-size: clamp(1.15rem, 1.2vw, 1.4rem); font-family: "Libre Baskerville", serif; font-weight: 700; color: var(--navy-deep); }
+.course-card ul { list-style: none; padding: 0; margin: 0 0 18px; color: var(--navy-soft); font-size: 0.96rem; line-height: 1.7; }
+.course-card li { position: relative; padding-left: 0; }
+.course-card button { width: fit-content; border: none; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 12px 18px; cursor: pointer; margin-top: auto; }
+.community-panel { display: grid; grid-template-columns: 1.8fr 1fr; gap: 0; align-items: stretch; margin: 28px 0 0; padding: 0; min-height: 360px; }
+.community-copy { background: #ffffff; padding: 56px 7%; }
+.community-copy h2 { margin: 0 0 12px; font-size: clamp(1.5rem, 1.8vw, 2.1rem); font-family: "Libre Baskerville", serif; color: var(--navy-deep); }
+.community-copy p { margin: 0; font-size: 0.95rem; color: var(--navy-soft); }
+.newsletter-card { background: #ff914d; border-radius: 0; padding: 56px 40px; min-height: 354px; display: flex; flex-direction: column; justify-content: flex-start; color: #fff; text-align: center; position: relative; }
+.newsletter-card h3 { margin: 0 0 10px; font-size: clamp(1.1rem, 1.3vw, 1.4rem); line-height: 1.25; font-family: "Libre Baskerville", serif; }
+.newsletter-card p { position: absolute; top: 50%; right: 40px; left: 40px; margin: 0; transform: translateY(-50%); font-size: clamp(1.3rem, 1.6vw, 1.65rem); line-height: 1.35; opacity: 0.95; }
+.reviews-bar { margin: 16px 0 0; padding: 26px 16px 22px; text-align: center; font-style: italic; color: var(--navy-soft); font-size: 1.4rem; border-top: 2px solid rgba(17, 42, 72, 0.35); }
+
+@media (max-width: 1024px) {
+  .course-tiles { grid-template-columns: repeat(3, minmax(110px, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .banner-intro { min-height: 0; aspect-ratio: 16 / 9; padding: 24px 18px; }
+  .heading-wrap h1 { font-size: 1.7rem; }
+  .heading-wrap p { font-size: 0.9rem; }
+  .intro-copy { padding: 20px 18px 22px; }
+  .course-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 12px; margin-top: 26px; }
+  .course-picker { padding: 30px 18px 38px; }
+  .picker-header { margin-bottom: 22px; }
+  .picker-header p, .section-header p { font-size: 0.92rem; line-height: 1.55; }
+  .course-tile { width: min(100%, 132px); }
+  .course-tile img { width: 100px; height: 100px; margin-bottom: 9px; }
+  .course-tile span { font-size: 0.95rem; }
+  .featured-courses { padding: 36px 18px 10px; }
+  .course-card img { height: auto; aspect-ratio: 16 / 10; border-radius: 12px 12px 0 0; }
+  .course-card h3 { margin-top: 14px; }
+  .community-panel { grid-template-columns: 1fr; gap: 0; margin-left: 0; margin-right: 0; min-height: 0; }
+  .community-copy { padding: 40px 18px; }
+  .helper-pill { position: static; margin-bottom: 10px; display: inline-block; }
+  .intro-copy p, .section-header h2, .picker-header h2 { font-size: 2rem; }
+  .community-copy h2 { font-size: 1.55rem; }
+  .newsletter-card { min-height: 220px; padding: 18px 20px; }
+  .newsletter-card h3 { font-size: 1.05rem; }
+  .newsletter-card p { right: 20px; left: 20px; font-size: 1.25rem; }
+}
